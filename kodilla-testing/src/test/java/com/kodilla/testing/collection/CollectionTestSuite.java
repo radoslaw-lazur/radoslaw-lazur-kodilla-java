@@ -4,11 +4,10 @@ import org.junit.*;
 import java.util.ArrayList;
 
 public class CollectionTestSuite {
+    private static int testCounter = 0;
 
     @Before
-    public void before() {
-        System.out.println("Test Case: begin");
-    }
+    public void before() { System.out.println("Test Case: begin"); }
 
     @After
     public void after() {
@@ -25,28 +24,28 @@ public class CollectionTestSuite {
         System.out.println("Test Suite: end");
     }
 
+    @Before
+    public void beforeEveryTest() {
+        testCounter++;
+        System.out.println("Preparing to execute test #" + testCounter);
+    }
+
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
+        // Given
         ArrayList<Integer> numbers = new ArrayList<>();
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(evenNumbers);
-        oddNumbersExterminator.exterminate(numbers);
-
-        System.out.println("Testing empty collections" + " numbers size: "
-                + numbers.size() + " evenNumber size: " + evenNumbers.size());
-
-        for(Integer data: evenNumbers){
-            System.out.println(data);
-        }
-
-        Assert.assertTrue(numbers.isEmpty() && evenNumbers.isEmpty());
-
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        // When
+        ArrayList<Integer> integers = oddNumbersExterminator.exterminate(numbers);
+        // Then
+        Assert.assertTrue(integers.isEmpty());
     }
 
     @Test
     public void testOddNumbersExterminatorNormalList(){
+        // Given
         ArrayList<Integer> numbers = new ArrayList<>();
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         numbers.add(3);
         numbers.add(4);
         numbers.add(10);
@@ -54,18 +53,13 @@ public class CollectionTestSuite {
         numbers.add(31);
         numbers.add(8);
         numbers.add(2);
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(evenNumbers);
-        oddNumbersExterminator.exterminate(numbers);
-
-        System.out.println("Testing normal collections" + " numbers size: "
-                + numbers.size() + " evenNumbers size: " + evenNumbers.size());
-
-        for(Integer data: evenNumbers){
-            System.out.println(data);
+        // When
+        ArrayList<Integer> evenNumbersList = oddNumbersExterminator.exterminate(numbers);
+        // Then
+        Assert.assertTrue(evenNumbersList.size() != 0);
+        for(Integer thenData: evenNumbersList){
+            Assert.assertTrue(thenData % 2 == 0);
         }
 
-        for (Integer evenNumber : evenNumbers) {
-            Assert.assertTrue(numbers.size() != 0 && evenNumber % 2 == 0);
-        }
     }
 }
