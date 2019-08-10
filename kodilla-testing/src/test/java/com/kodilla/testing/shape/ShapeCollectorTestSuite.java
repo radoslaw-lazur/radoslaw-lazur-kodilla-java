@@ -66,4 +66,5 @@ public class ShapeCollectorTestSuite {
         // Then
         Assert.assertEquals(3, shapeCollector.figures.size());
     }
+
 }
