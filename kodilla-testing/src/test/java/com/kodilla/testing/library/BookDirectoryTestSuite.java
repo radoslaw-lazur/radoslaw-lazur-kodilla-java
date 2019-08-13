@@ -137,4 +137,5 @@ public class BookDirectoryTestSuite {
         // Then
         assertEquals(5, theListLibraryUser1.size());
     }
+
 }
