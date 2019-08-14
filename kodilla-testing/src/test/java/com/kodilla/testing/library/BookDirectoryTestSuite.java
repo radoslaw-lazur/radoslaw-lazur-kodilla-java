@@ -14,7 +14,6 @@ import static org.mockito.ArgumentMatchers.anyString;
 
 public class BookDirectoryTestSuite {
 
-
         private LibraryDatabase libraryDatabaseMock;
         private BookLibrary bookLibrary;
 
