@@ -18,7 +18,8 @@ public class BookDirectoryTestSuite {
         private LibraryDatabase libraryDatabaseMock;
         private BookLibrary bookLibrary;
 
-    public BookDirectoryTestSuite() {
+    @Before
+    public void start() {
         libraryDatabaseMock = mock(LibraryDatabase.class);
         bookLibrary = new BookLibrary(libraryDatabaseMock);
     }
