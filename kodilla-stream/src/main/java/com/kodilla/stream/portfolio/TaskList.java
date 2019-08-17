@@ -2,6 +2,7 @@ package com.kodilla.stream.portfolio;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 
 public final class TaskList {
@@ -39,8 +40,14 @@ public final class TaskList {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof TaskList)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         TaskList taskList = (TaskList) o;
-        return name.equals(taskList.name);
+        return Objects.equals(tasks, taskList.tasks) &&
+                Objects.equals(name, taskList.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tasks, name);
     }
 }

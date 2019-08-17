@@ -35,4 +35,9 @@ public final class User {
         return Objects.equals(userName, user.userName) &&
                 Objects.equals(realName, user.realName);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userName, realName);
+    }
 }
