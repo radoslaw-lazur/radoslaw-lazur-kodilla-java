@@ -1,10 +1,9 @@
 package com.kodilla.stream.world;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Continent {
+public class Continent {
 
     private final List<Country> countries = new ArrayList<>();
 
