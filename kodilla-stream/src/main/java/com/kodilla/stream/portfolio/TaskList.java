@@ -6,6 +6,7 @@ import java.util.Objects;
 
 
 public final class TaskList {
+
     private final List<Task> tasks = new LinkedList<>();
     private final String name;
 
