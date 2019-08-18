@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class World {
+public  class World {
 
     private final List<Continent> continents = new ArrayList<>();
 

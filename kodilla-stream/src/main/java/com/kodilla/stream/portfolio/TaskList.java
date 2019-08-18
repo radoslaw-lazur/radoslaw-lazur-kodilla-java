@@ -6,6 +6,7 @@ import java.util.Objects;
 
 
 public final class TaskList {
+
     private final List<Task> tasks = new LinkedList<>();
     private final String name;
 
@@ -40,9 +41,10 @@ public final class TaskList {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof TaskList)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         TaskList taskList = (TaskList) o;
-        return name.equals(taskList.name);
+        return Objects.equals(tasks, taskList.tasks) &&
+                Objects.equals(name, taskList.name);
     }
 
     @Override
