@@ -9,7 +9,7 @@ public  class World {
     private final List<Continent> continents = new ArrayList<>();
 
     public void addContinent(Continent continent){
-    continents.add(continent);
+        continents.add(continent);
     }
 
     public BigDecimal getPeopleQuantity(){
