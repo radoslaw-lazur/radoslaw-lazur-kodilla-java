@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 
@@ -142,15 +143,16 @@ public class BoardTestSuite {
                 .sum();
         System.out.println("Tasks: " + tasks);
 
-        long days = project.getTaskLists().stream()
+        double result = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(t1 -> t1.getTasks().stream())
                 .map(t2 -> t2.getCreated())
                 .map(t3 -> Duration.between(t3.atStartOfDay(), LocalDate.now().atStartOfDay()))
                 .mapToLong(t4 -> t4.toDays())
-                .sum();
-        double result = days / tasks;
-        System.out.println("Sum of days: " + days);
+                .average()
+                .getAsDouble();
+        //double result = days / tasks;
+       // System.out.println("Sum of days: " + days);
         System.out.println("Average days per tasks in progress: " + result);
         // Then
         Assert.assertEquals(10, result,0);
