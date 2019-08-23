@@ -5,21 +5,19 @@ import java.util.Map;
 
 public class FlightSearch {
 
-    public boolean findFlight(Flight flight) throws RouteNotFoundException{
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
         Map<String, Boolean> flights = new HashMap<>();
         flights.put("Schiphol", true);
         flights.put("Tegel", true);
         flights.put("Krakow", false);
 
-        long possibilities = flights.entrySet().stream()
-                .filter(entry -> entry.getKey().equals(flight.getArrivalAirport()))
-                .filter(entry -> entry.getValue() == true)
-                .count();
-
-        if(possibilities > 0){
+        if (flights.get(flight.getArrivalAirport()) == null) {
+            throw new RouteNotFoundException();
+        } else if (flights.containsKey(flight.getArrivalAirport()) &&
+                flights.get(flight.getArrivalAirport())) {
             return true;
         } else {
-            throw new RouteNotFoundException();
+            return false;
         }
     }
 }
