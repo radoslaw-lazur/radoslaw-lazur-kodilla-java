@@ -11,13 +11,9 @@ public class FlightSearch {
         flights.put("Tegel", true);
         flights.put("Krakow", false);
 
-        if (flights.get(flight.getArrivalAirport()) == null) {
+        if (!flights.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException();
-        } else if (flights.containsKey(flight.getArrivalAirport()) &&
-                flights.get(flight.getArrivalAirport())) {
-            return true;
-        } else {
-            return false;
         }
+        return flights.get(flight.getArrivalAirport());
     }
 }
