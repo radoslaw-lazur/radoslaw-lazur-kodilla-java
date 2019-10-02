@@ -15,6 +15,7 @@ public class Application {
         Products products = new Products();
         Users users = new Users();
         SaleRequest saleRequest = new SaleRequest(users.getUser(), products.getProduct());
+
         SaleDto saleDto = saleProcessor.process(saleRequest);
     }
 }
