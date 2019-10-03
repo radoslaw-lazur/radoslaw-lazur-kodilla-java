@@ -16,7 +16,7 @@ public class Flights {
             LocalTime.of(14, 30));
     private Flight flight3 = new Flight("Wroclaw", "Poznan", LocalTime.of(13, 0),
             LocalTime.of(14, 0));
-    private Flight flight4 = new Flight("Poznan", "Krakow", LocalTime.of(8, 30),
+    private Flight flight4 = new Flight("Poznan", "Krakow", LocalTime.of(8, 0),
             LocalTime.of(9, 0));
 
     public Set<Flight> getFlightSet() {
