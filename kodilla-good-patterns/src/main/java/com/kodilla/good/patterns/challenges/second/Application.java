@@ -16,7 +16,6 @@ public class Application {
         shopRecognizer.recognize(new HealthyShopOrder());
         System.out.println();
         shopRecognizer.recognize(new ExtraFoodShopOrder());
-
         System.out.println("Yes, I'm vegan :)");
 
     }
