@@ -7,11 +7,10 @@ import java.util.Set;
 
 public class Users {
 
-    private Set<User> userSet = new HashSet<>();
-    private User user1 = new User("Radoslaw", "Lazur", "radoslaw-lazur",
+    private User user = new User("Radoslaw", "Lazur", "radoslaw-lazur",
             "777777777", "radoslaw.lazur@gmail.com");
 
-    public User getUser1() {
-        return user1;
+    public User getUser() {
+        return user;
     }
 }
