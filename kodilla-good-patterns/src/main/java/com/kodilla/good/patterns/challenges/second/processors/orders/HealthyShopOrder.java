@@ -13,21 +13,22 @@ import com.kodilla.good.patterns.challenges.second.services.users.Users;
 
 public class HealthyShopOrder implements ShopOrder {
 
+    private InformationService informationServiceHealthyShopSms = new SmsService();
+    private InformationService informationServiceHealthyShopEmail = new EmailService();
+    private Rapository rapository = new Rapository();
+    private OrderService orderService = new OrderService();
+    private Users users = new Users();
+    private Shops shops = new Shops();
+
+
     @Override
     public void order() {
-
-        InformationService informationServiceHealthyShopSms = new SmsService();
-        InformationService informationServiceHealthyShopEmail = new EmailService();
-        Rapository rapository = new Rapository();
-        OrderService orderService = new OrderService();
-        Users users = new Users();
-        Shops shops = new Shops();
 
         HealthyShopProducts healthyShopProducts = new HealthyShopProducts();
         HealthyShopProcessor healthyShopProcessor = new HealthyShopProcessor(informationServiceHealthyShopSms,
                 informationServiceHealthyShopEmail,
                 rapository, orderService);
-        Request requestHealthyShop = new Request(shops.getHealthyShop(), users.getUser1(),
+        Request requestHealthyShop = new Request(shops.getHealthyShop(), users.getUser(),
                 healthyShopProducts.getHealthyShopProductsSet());
         healthyShopProcessor.process(requestHealthyShop);
     }
