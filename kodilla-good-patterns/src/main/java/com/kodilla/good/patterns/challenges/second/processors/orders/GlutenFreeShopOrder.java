@@ -12,20 +12,13 @@ import com.kodilla.good.patterns.challenges.second.services.users.Users;
 
 public class GlutenFreeShopOrder implements ShopOrder {
 
-    private InformationService informationServiceGlutenFreeShop = new EmailService();
-    private Rapository rapository = new Rapository();
-    private OrderService orderService = new OrderService();
-    private Users users = new Users();
-    private Shops shops = new Shops();
+    private ForwardClassOrder forward = new ForwardClassOrder();
 
     @Override
     public void order() {
 
-        GlutenFreeShopProducts glutenFreeShopProducts = new GlutenFreeShopProducts();
-        GlutenFreeShopProcessor glutenFreeShopProcessor = new GlutenFreeShopProcessor(informationServiceGlutenFreeShop,
-                rapository, orderService );
-        Request requestGlutenFreeShop = new Request(shops.getGlutenFreeShop(), users.getUser(),
-                glutenFreeShopProducts.getGlutenFreeShopProductsSet());
-        glutenFreeShopProcessor.process(requestGlutenFreeShop);
+        Request requestGlutenFreeShop = new Request(forward.getShops().getGlutenFreeShop(), forward.getUsers().getUser(),
+                forward.getGlutenFreeShopProducts().getGlutenFreeShopProductsSet());
+        forward.getGlutenFreeShopProcessor().process(requestGlutenFreeShop);
     }
 }

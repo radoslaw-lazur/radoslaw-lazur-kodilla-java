@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges.second.processors.shops;
 
 import com.kodilla.good.patterns.challenges.second.models.Request;
-import com.kodilla.good.patterns.challenges.second.models.SaleDto;
 import com.kodilla.good.patterns.challenges.second.services.informations.InformationService;
 import com.kodilla.good.patterns.challenges.second.services.orderservices.GiftService;
 import com.kodilla.good.patterns.challenges.second.services.orderservices.OrderService;
@@ -23,15 +22,12 @@ public class ExtraFoodShopProcessor {
 
     }
 
-    public SaleDto process(final Request request) {
+    public void process(final Request request) {
         boolean isOrdered = orderService.makeOrder(request.getUser(), request.getShop(), request.getProductSet());
         if (isOrdered) {
             informationService.inform(request.getShop(), request.getUser(), request.getProductSet());
             giftService.makeGiftOrder();
             rapository.save(request);
-            return new SaleDto(true);
-        } else {
-            return new SaleDto(false);
         }
     }
 }

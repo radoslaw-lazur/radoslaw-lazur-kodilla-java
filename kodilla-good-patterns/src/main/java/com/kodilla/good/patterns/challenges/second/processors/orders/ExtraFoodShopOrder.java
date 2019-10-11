@@ -13,20 +13,13 @@ import com.kodilla.good.patterns.challenges.second.services.users.Users;
 
 public class ExtraFoodShopOrder implements ShopOrder {
 
-    private InformationService informationServiceExtraFoodShop = new EmailService();
-    private Rapository rapository = new Rapository();
-    private OrderService orderService = new OrderService();
-    private GiftService giftService = new GiftService();
-    private Users users = new Users();
-    private Shops shops = new Shops();
-    private ExtraFoodShopProducts extraFoodShopProducts = new ExtraFoodShopProducts();
-    private ExtraFoodShopProcessor extraFoodShopProcessor = new ExtraFoodShopProcessor(informationServiceExtraFoodShop,
-            rapository, orderService, giftService);
+
+    private ForwardClassOrder forward = new ForwardClassOrder();
 
     @Override
     public void order() {
-        Request requestExtraShop = new Request(shops.getExtraFoodShop(), users.getUser(),
-                extraFoodShopProducts.getExtraFoodShopProductsSet());
-        extraFoodShopProcessor.process(requestExtraShop);
+        Request requestExtraShop = new Request(forward.getShops().getExtraFoodShop(), forward.getUsers().getUser(),
+                forward.getExtraFoodShopProducts().getExtraFoodShopProductsSet());
+        forward.getExtraFoodShopProcessor().process(requestExtraShop);
     }
 }
