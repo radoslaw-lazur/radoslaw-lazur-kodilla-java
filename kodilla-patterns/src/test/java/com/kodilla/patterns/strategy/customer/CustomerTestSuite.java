@@ -15,7 +15,6 @@ public class CustomerTestSuite {
         Customer steven = new IndividualCustomer("Steven Links");
         Customer john = new IndividualYoungCustomer("John Hemerald");
         Customer kodilla = new CorporateCustomer("Kodilla");
-
         //When
         String stevenShouldBuy = steven.predict();
         System.out.println("Steven should: " + stevenShouldBuy);
@@ -23,7 +22,6 @@ public class CustomerTestSuite {
         System.out.println("John should: " + johnShouldBuy);
         String kodillaShouldBuy = kodilla.predict();
         System.out.println("Kodilla should: " + kodillaShouldBuy);
-
         //Then
         Assert.assertEquals("[Conservative predictor] Buy debentures of XYZ", stevenShouldBuy);
         Assert.assertEquals("[Aggressive predictor] Buy stock of XYZ", johnShouldBuy);
@@ -34,14 +32,12 @@ public class CustomerTestSuite {
     public void testIndividualInvestingStrategy() {
         //Given
         Customer steven = new IndividualCustomer("Steven Links");
-
         //When
         String stevenShouldBuy = steven.predict();
         System.out.println("Steven should: " + stevenShouldBuy);
         steven.setBuyingStrategy(new AggressivePredictor());
         stevenShouldBuy = steven.predict();
         System.out.println("Steven now should: " + stevenShouldBuy);
-
         //Then
         Assert.assertEquals("[Aggressive predictor] Buy stock of XYZ", stevenShouldBuy);
     }
