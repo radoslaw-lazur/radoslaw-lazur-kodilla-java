@@ -14,15 +14,15 @@ public final class Book {
         this.publicationDate = publicationDate;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
-    public String getAuthor() {
+    String getAuthor() {
         return author;
     }
 
-    public LocalDate getPublicationDate() {
+    LocalDate getPublicationDate() {
         return publicationDate;
     }
 
