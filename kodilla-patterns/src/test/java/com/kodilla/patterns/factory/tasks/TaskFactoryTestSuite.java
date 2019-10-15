@@ -2,7 +2,6 @@ package com.kodilla.patterns.factory.tasks;
 
 import org.junit.Assert;
 import org.junit.Test;
-import java.util.Objects;
 
 public class TaskFactoryTestSuite {
 
@@ -13,7 +12,7 @@ public class TaskFactoryTestSuite {
         //Given
         Task driving = factory.makeTask(TaskFactory.DRIVING);
         //When
-        String name = Objects.requireNonNull(driving).getTaskName();
+        String name = driving.getTaskName();
         driving.executeTask();
         boolean result = driving.isTaskExecuted();
         //Then
@@ -26,7 +25,7 @@ public class TaskFactoryTestSuite {
         //Given
         Task painting = factory.makeTask(TaskFactory.PAINTING);
         //When
-        String name = Objects.requireNonNull(painting).getTaskName();
+        String name = painting.getTaskName();
         painting.executeTask();
         boolean result = painting.isTaskExecuted();
         //Then
@@ -39,7 +38,7 @@ public class TaskFactoryTestSuite {
         //Given
         Task shopping = factory.makeTask(TaskFactory.SHOPPING);
         //When
-        String name = Objects.requireNonNull(shopping).getTaskName();
+        String name = shopping.getTaskName();
         shopping.executeTask();
         boolean result = shopping.isTaskExecuted();
         //Then
