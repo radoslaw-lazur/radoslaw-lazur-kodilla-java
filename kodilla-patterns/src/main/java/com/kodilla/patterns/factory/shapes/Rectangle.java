@@ -1,6 +1,7 @@
 package com.kodilla.patterns.factory.shapes;
 
 public final class Rectangle implements Shape {
+
     private final String name;
     private final double width;
     private final double length;

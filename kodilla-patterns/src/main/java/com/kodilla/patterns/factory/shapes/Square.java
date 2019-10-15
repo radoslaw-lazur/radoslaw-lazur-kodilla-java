@@ -1,6 +1,7 @@
 package com.kodilla.patterns.factory.shapes;
 
 public final class Square implements Shape {
+
     private final String name;
     private final double width;
 

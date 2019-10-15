@@ -1,6 +1,7 @@
 package com.kodilla.patterns.factory.shapes;
 
 public final class Circle implements Shape {
+
     private final String name;
     private final double radius;
 
