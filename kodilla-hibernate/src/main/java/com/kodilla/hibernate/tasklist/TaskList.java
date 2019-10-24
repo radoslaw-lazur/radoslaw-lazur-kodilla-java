@@ -15,7 +15,8 @@ public class TaskList {
         this.description = description;
     }
 
-    public TaskList() {}
+    public TaskList() {
+    }
 
     @Id
     @GeneratedValue
