@@ -41,15 +41,14 @@ public class InvoiceDaoTestSuite {
         int productId = product.getId();
         int invoiceId = invoice.getId();
         int itemId = item.getId();
-
-
         //Then
         Assert.assertNotEquals(0, invoiceId);
         Assert.assertNotEquals(0, productId);
         Assert.assertNotEquals(0, itemId);
-        //CleanUp
-        //itemControllerDao.deleteById(itemId);
-        //productControllerDao.deleteById(productId);
-        //invoiceControllerDao.deleteById(invoiceId);
+        Assert.assertEquals("SSD drive", item.getProduct().getName());
+        Assert.assertEquals("First", invoice.getNumber());
+        Assert.assertEquals(1, invoice.getItems().size());
+        Assert.assertEquals(new BigDecimal(220.5).multiply(new BigDecimal(10)),
+                invoice.getItems().get(0).getValue());
     }
 }
