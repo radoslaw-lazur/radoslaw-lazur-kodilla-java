@@ -33,16 +33,18 @@ public class InvoiceDaoTestSuite {
         invoice.getItems().add(item);
         product.getItems().add(item);
         //When
-        int invoiceId = invoice.getId();
+        productControllerDao.save(product);
         invoiceControllerDao.save(invoice);
-        int itemId = item.getId();
         itemControllerDao.save(item);
         int productId = product.getId();
-        productControllerDao.save(product);
+        int invoiceId = invoice.getId();
+        int itemId = item.getId();
+
+
         //Then
-        Assert.assertEquals(0, invoiceId);
-        Assert.assertEquals(0, invoiceId);
-        Assert.assertEquals(0, productId);
+        Assert.assertNotEquals(0, invoiceId);
+        Assert.assertNotEquals(0, invoiceId);
+        Assert.assertNotEquals(0, productId);
         //CleanUp
         invoiceControllerDao.deleteById(invoiceId);
         itemControllerDao.deleteById(itemId);
