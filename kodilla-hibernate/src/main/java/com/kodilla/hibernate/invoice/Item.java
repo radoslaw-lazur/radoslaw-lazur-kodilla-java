@@ -38,7 +38,7 @@ public class Item {
     }
 
     @NotNull
-    @Column(name = "PROCE")
+    @Column(name = "PRICE")
     public BigDecimal getPrice() {
         return price;
     }
