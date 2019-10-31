@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @NamedQuery(
         name = "Employee.retrieveEmployeeByLastName",
@@ -70,5 +71,21 @@ public class Employee {
 
     private void setCompanies(List<Company> companies) {
         this.companies = companies;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id &&
+                Objects.equals(firstname, employee.firstname) &&
+                Objects.equals(lastname, employee.lastname) &&
+                Objects.equals(companies, employee.companies);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstname, lastname, companies);
     }
 }
