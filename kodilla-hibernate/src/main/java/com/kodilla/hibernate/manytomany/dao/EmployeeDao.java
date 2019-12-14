@@ -14,4 +14,6 @@ import java.util.List;
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
     @Query
     List<Employee> retrieveEmployeeByLastName(@Param("LASTNAME") String lastName);
+    @Query
+    List<Employee> retrieveEmployeeByRandomCharString(@Param("LASTNAME") String randomCharString);
 }
