@@ -26,10 +26,6 @@ public class FocadeTestSuite {
     @Autowired
     ServiceFocade serviceFocade;
 
-    private int softwareMachineId;
-    private int dataMaestersId;
-    private int greyMatterId;
-
     @Before
     public void before() {
         Employee johnSmith = new Employee("John", "Smith");
@@ -53,21 +49,17 @@ public class FocadeTestSuite {
         lindaKovalsky.getCompanies().add(greyMatter);
 
         companyDao.save(softwareMachine);
-        softwareMachineId = softwareMachine.getId();
+        int softwareMachineId = softwareMachine.getId();
         companyDao.save(dataMaesters);
-        dataMaestersId = dataMaesters.getId();
+        int dataMaestersId = dataMaesters.getId();
         companyDao.save(greyMatter);
-        greyMatterId = greyMatter.getId();
+        int greyMatterId = greyMatter.getId();
     }
 
     @After
     public void cleanUp() {
-        try {
             employeeDao.deleteAll();
             companyDao.deleteAll();
-        } catch (Exception e) {
-           //stuff
-        }
     }
 
     @Test
