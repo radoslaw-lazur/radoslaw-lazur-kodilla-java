@@ -1,7 +1,6 @@
 package com.kodilla.patterns2.decorator.taxiportal.decorators;
 
 import com.kodilla.patterns2.decorator.taxiportal.TaxiOrder;
-import com.kodilla.patterns2.decorator.taxiportal.decorators.AbstractTaxiOrderDecorator;
 
 import java.math.BigDecimal;
 
