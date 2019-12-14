@@ -19,7 +19,6 @@ public class ForumTopic implements Observable {
         notifyObservers();
     }
 
-
     @Override
     public void registerObserver(Observer observer) {
         observers.add(observer);
