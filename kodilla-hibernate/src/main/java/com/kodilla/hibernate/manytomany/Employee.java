@@ -10,6 +10,11 @@ import java.util.Objects;
         name = "Employee.retrieveEmployeeByLastName",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+@NamedQuery(
+        name = "Employee.retrieveEmployeeByRandomCharString",
+        query = "FROM Employee WHERE lastname LIKE CONCAT(\'%\', :LASTNAME, \'%\')"
+)
+
 
 @Entity
 @Table(name = "EMPLOYEES")
