@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 public class Statistics implements BookStatistics {
-
     @Override
     public int averagePublicationYear(Map<BookSignature, Book> books) {
         if (books.size() == 0) return 0;
