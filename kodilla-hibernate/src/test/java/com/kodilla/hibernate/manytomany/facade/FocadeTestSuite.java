@@ -12,9 +12,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.List;
-import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -53,31 +51,27 @@ public class FocadeTestSuite {
         companyDao.save(greyMatter);
     }
 
-    @After
-    public void cleanUp() {
-            employeeDao.deleteAll();
-            companyDao.deleteAll();
-    }
-
     @Test
     public void testRandomCharStringCompany() {
         //When
-        Optional<List<Company>> optionalCompanyList = Optional.ofNullable(companyDao.retrieveCompanyByRandomCharString("Mach"));
+        List<Company> companyList = companyDao.retrieveCompanyByRandomCharString("Mach");
         //Then
-        Assert.assertTrue(optionalCompanyList.isPresent());
-        List<Company> companyListFromDb = optionalCompanyList.get();
-        Assert.assertEquals(1, companyListFromDb.size());
-        Assert.assertEquals("Software Machine", companyListFromDb.get(0).getName());
+        Assert.assertEquals(1, companyList.size());
+        Assert.assertEquals("Software Machine", companyList.get(0).getName());
     }
 
     @Test
     public void testRandomCharStringEmployee() {
         //When
-        Optional<List<Employee>> optionalEmployeeList = Optional.ofNullable(employeeDao.retrieveEmployeeByRandomCharString("Kov"));
+        List<Employee> employeeList = employeeDao.retrieveEmployeeByRandomCharString("Kov");
         //Then
-        Assert.assertTrue(optionalEmployeeList.isPresent());
-        List<Employee> employeeListFromDb = optionalEmployeeList.get();
-        Assert.assertEquals(1, employeeListFromDb.size());
-        Assert.assertEquals("Kovalsky", employeeListFromDb.get(0).getLastname());
+        Assert.assertEquals(1, employeeList.size());
+        Assert.assertEquals("Kovalsky", employeeList.get(0).getLastname());
+    }
+
+    @After
+    public void cleanUp() {
+        employeeDao.deleteAll();
+        companyDao.deleteAll();
     }
 }
