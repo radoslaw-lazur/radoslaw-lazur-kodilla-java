@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SalaryAdapterTestSuite {
-
     @Test
     public void testTotalSalary() {
         //Given
