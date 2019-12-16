@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class MedianAdapter extends MedianAdaptee implements Classifier {
     @Override
-    public int publicationYearMedian(Set<Book> bookSet) {
+    public double publicationYearMedian(Set<Book> bookSet) {
         Map<BookSignature, BookB> bookMap = new HashMap<>();
         for (Book book : bookSet) {
             BookB bookB = new BookB(book.getAuthor(), book.getTitle(), book.getPublicationYear());

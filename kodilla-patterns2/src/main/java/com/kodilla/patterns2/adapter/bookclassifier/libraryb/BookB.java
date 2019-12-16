@@ -3,9 +3,9 @@ package com.kodilla.patterns2.adapter.bookclassifier.libraryb;
 public class BookB {
     private final String author;
     private final String title;
-    private final int yearOfPublication;
+    private final double yearOfPublication;
 
-    public BookB(final String author, final String title, final int yearOfPublication) {
+    public BookB(final String author, final String title, final double yearOfPublication) {
         this.author = author;
         this.title = title;
         this.yearOfPublication = yearOfPublication;
@@ -19,7 +19,7 @@ public class BookB {
         return title;
     }
 
-    public int getYearOfPublication() {
+    public double getYearOfPublication() {
         return yearOfPublication;
     }
 }

@@ -3,10 +3,10 @@ package com.kodilla.patterns2.adapter.bookclassifier.librarya;
 public class Book {
     private final String author;
     private final String title;
-    private final int publicationYear;
+    private final double publicationYear;
     private final String signature;
 
-    public Book(final String author, final String title, final int publicationYear, final String signature) {
+    public Book(final String author, final String title, final double publicationYear, final String signature) {
         this.author = author;
         this.title = title;
         this.publicationYear = publicationYear;
@@ -21,7 +21,7 @@ public class Book {
         return title;
     }
 
-    public int getPublicationYear() {
+    public double getPublicationYear() {
         return publicationYear;
     }
 

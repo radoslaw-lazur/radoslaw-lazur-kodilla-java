@@ -18,9 +18,9 @@ public class MedianAdapterTestSuite {
         bookSet.add(new Book("Author4", "Title4", 2003, "Signature4"));
         MedianAdapter medianAdapter = new MedianAdapter();
         //When
-        int median = medianAdapter.publicationYearMedian(bookSet);
+        double median = medianAdapter.publicationYearMedian(bookSet);
         System.out.println(median);
         //Then
-        Assert.assertEquals(2003, median);
+        Assert.assertEquals(2003.0, median, 0);
     }
 }
