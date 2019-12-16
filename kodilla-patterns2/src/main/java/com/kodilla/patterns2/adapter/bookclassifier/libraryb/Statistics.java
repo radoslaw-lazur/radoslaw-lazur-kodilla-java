@@ -5,21 +5,21 @@ import java.util.Map;
 
 public class Statistics implements BookStatistics {
     @Override
-    public double averagePublicationYear(Map<BookSignature, BookB> books) {
+    public double averagePublicationYear(Map<BookSignature, Book> books) {
         if (books.size() == 0) return 0;
         double sum = 0;
-        for (Map.Entry<BookSignature, BookB> entry : books.entrySet()) {
+        for (Map.Entry<BookSignature, Book> entry : books.entrySet()) {
             sum += entry.getValue().getYearOfPublication();
         }
         return sum / books.size();
     }
 
     @Override
-    public double medianPublicationYear(Map<BookSignature, BookB> books) {
+    public double medianPublicationYear(Map<BookSignature, Book> books) {
         if (books.size() == 0) return 0;
         double[] years = new double[books.size()];
         int n = 0;
-        for (Map.Entry<BookSignature, BookB> entry : books.entrySet()) {
+        for (Map.Entry<BookSignature, Book> entry : books.entrySet()) {
             years[n] = entry.getValue().getYearOfPublication();
             n++;
         }
