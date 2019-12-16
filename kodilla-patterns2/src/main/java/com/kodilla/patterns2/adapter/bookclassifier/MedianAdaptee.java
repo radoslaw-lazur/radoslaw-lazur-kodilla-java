@@ -7,14 +7,14 @@ import com.kodilla.patterns2.adapter.bookclassifier.libraryb.Statistics;
 import java.util.Map;
 
 public class MedianAdaptee implements BookStatistics {
-    private Statistics statistics = new Statistics();
+    private static final Statistics STATISTICS = new Statistics();
     @Override
     public double averagePublicationYear(Map<BookSignature, BookB> books) {
-        return statistics.medianPublicationYear(books);
+        return STATISTICS.medianPublicationYear(books);
     }
 
     @Override
     public double medianPublicationYear(Map<BookSignature, BookB> books) {
-        return statistics.medianPublicationYear(books);
+        return STATISTICS.medianPublicationYear(books);
     }
 }
