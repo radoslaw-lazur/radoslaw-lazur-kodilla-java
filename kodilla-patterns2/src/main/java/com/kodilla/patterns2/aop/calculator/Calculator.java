@@ -22,9 +22,9 @@ public class Calculator {
         }
         return x / y;
     }
-    public BigInteger factorial (BigInteger n) {
+    public BigInteger calculateFactorial (BigInteger n) {
         if (n.compareTo(BigInteger.ONE) > 0) {
-            return n.multiply(factorial(n.subtract(BigInteger.ONE)));
+            return n.multiply(calculateFactorial(n.subtract(BigInteger.ONE)));
         } else if (n.equals(BigInteger.ONE) || n.equals(BigInteger.ZERO)) {
             return BigInteger.ONE;
         } else {

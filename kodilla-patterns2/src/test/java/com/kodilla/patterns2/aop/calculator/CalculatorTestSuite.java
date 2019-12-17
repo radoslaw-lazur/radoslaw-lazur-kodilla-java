@@ -88,7 +88,7 @@ public class CalculatorTestSuite {
                 "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" +
                 "00000000000");
         //When
-        BigInteger result = calculator.factorial(new BigInteger("1000"));
+        BigInteger result = calculator.calculateFactorial(new BigInteger("1000"));
         //Then
         LOGGER.info("Testing factorial method");
         System.out.println(result);
