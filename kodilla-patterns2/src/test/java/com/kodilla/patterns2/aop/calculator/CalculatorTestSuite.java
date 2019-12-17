@@ -93,6 +93,6 @@ public class CalculatorTestSuite {
         LOGGER.info("Testing factorial method");
         System.out.println(result);
         assertTrue(BigInteger.ONE.compareTo(result) < 0);
-        assertEquals(result, result);
+        assertEquals(bigInteger, result);
     }
 }
