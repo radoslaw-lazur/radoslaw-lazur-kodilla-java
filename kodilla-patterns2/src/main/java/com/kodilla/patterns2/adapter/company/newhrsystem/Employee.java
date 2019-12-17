@@ -4,28 +4,16 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Employee {
-    final private String peselId;
-    final private String firstName;
-    final private String lastName;
-    final private BigDecimal baseSalary;
+    private final String peselId;
+    private final String firstName;
+    private final String lastName;
+    private final BigDecimal baseSalary;
 
     public Employee(String peselId, String firstName, String lastName, BigDecimal baseSalary) {
         this.peselId = peselId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.baseSalary = baseSalary;
-    }
-
-    public String getPeselId() {
-        return peselId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public BigDecimal getBaseSalary() {
