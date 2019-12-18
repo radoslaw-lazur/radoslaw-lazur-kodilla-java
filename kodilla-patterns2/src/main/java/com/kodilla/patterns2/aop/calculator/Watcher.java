@@ -15,13 +15,13 @@ import java.math.BigDecimal;
 public class Watcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(Watcher.class);
 
-    @Before("execution(* com.kodilla.patterns2.aop.calculator.Calculator.factorial(..))" +
+    @Before("execution(* com.kodilla.patterns2.aop.calculator.Calculator.calculateFactorial(..))" +
             "&& args(theNumber) && target(object)")
     public void logEvent(BigDecimal theNumber, Object object) {
         LOGGER.info("Class: " + object.getClass().getName() + ", Args: " + theNumber);
     }
 
-    @Around("execution(* com.kodilla.patterns2.aop.calculator.Calculator.factorial(..)))")
+    @Around("execution(* com.kodilla.patterns2.aop.calculator.Calculator.calculateFactorial(..)))")
     public Object measureTime(final ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Object result;
         try {
