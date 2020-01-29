@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class DbManagerTestSuite {
 
-    @Test
+    //@Test
     public void testConnection() throws SQLException {
         //Given
         //When
@@ -18,7 +18,7 @@ public class DbManagerTestSuite {
         Assert.assertNotNull(dbManager.getConnection());
     }
 
-    @Test
+    //@Test
     public void testSelectUsers() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
@@ -39,7 +39,7 @@ public class DbManagerTestSuite {
         Assert.assertEquals(5, counter);
     }
 
-    @Test
+   // @Test
     public void testSelectUsersAndPosts() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();

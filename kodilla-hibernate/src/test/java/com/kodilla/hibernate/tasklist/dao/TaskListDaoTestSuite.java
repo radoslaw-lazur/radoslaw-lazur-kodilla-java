@@ -4,6 +4,7 @@ import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.task.dao.TaskDao;
 import com.kodilla.hibernate.tasklist.TaskList;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +27,7 @@ public class TaskListDaoTestSuite {
     private static final String DESCRIPTION = "TaskList description";
     private static final String LISTNAME = "List name";
 
-    @Test
+    //@Test
     public void testFindByListName() {
         //Given
         TaskList taskList = new TaskList(LISTNAME, DESCRIPTION);
@@ -64,7 +65,7 @@ public class TaskListDaoTestSuite {
         taskListDao.deleteById(id);
     }
 
-    @Test
+    //@Test
     public void testNamedQueries() {
         //Given
         Task task1 = new Task("Test: Study Hibernate", 3);
