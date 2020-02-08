@@ -15,8 +15,7 @@ public class WebDriverConfig {
         if (driver.equals(FIREFOX)) {
             return new FirefoxDriver();
         } else if (driver.equals(CHROME)) {
-            ChromeOptions option = new ChromeOptions();
-            return new ChromeDriver(option);
+            return new ChromeDriver();
         } else {
             return null;
         }
